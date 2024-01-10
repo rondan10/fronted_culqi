@@ -20,7 +20,11 @@ npm run build
 npm run lint
 ```
 
-### Respuesta
+# Respuesta
+
+La vista de datos en general estan por consola
+Tomar el token de cuando tokerizamos la tarjeta e insertarlo en el input donde pide tarjeta
+
 ## LocalStorage
 ## Verificacion e insercion de datos a Mongodb
 ## Endpoints
