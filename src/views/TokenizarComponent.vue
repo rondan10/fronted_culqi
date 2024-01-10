@@ -6,13 +6,13 @@
         <input v-model="username" type="text" required class="w-full p-2 border border-gray-300 rounded">
   
         <label class="block">Número de tarjeta</label>
-        <input v-model="cardNumber" type="text" required class="w-full p-2 border border-gray-300 rounded">
+        <input v-model="cardNumber" type="text" maxlength="16" required class="w-full p-2 border border-gray-300 rounded">
   
         <label class="block">Fecha de Expiración (MM/YYYY)</label>
-        <input v-model="expirationDate" type="text" required class="w-full p-2 border border-gray-300 rounded">
+        <input v-model="expirationDate" type="text" maxlength="7" @input="formatExpirationDate" required class="w-full p-2 border border-gray-300 rounded">
   
         <label class="block">CVV</label>
-        <input v-model="cvv" type="number" required class="w-full p-2 border border-gray-300 rounded">
+        <input v-model="cvv" type="number" oninput="this.value = this.value.slice(0, 3)" required class="w-full p-2 border border-gray-300 rounded">
   
         <label class="block">Email</label>
         <input v-model="email" type="email" required class="w-full p-2 border border-gray-300 rounded">
@@ -34,6 +34,16 @@
       };
     },
     methods: {
+
+      formatExpirationDate(event) {
+      let inputValue = event.target.value;
+
+      if (inputValue.length === 2 && !inputValue.includes('/')) {
+        inputValue += '/';
+      }
+
+      this.expirationDate = inputValue;
+    },
       tokenizar() {
 
         const [month , year] = this.expirationDate.split('/');
@@ -64,6 +74,8 @@
           this.email = '';
         })
         .catch(error => {
+          alert("Ingrese una tarjeta válida");
+          this.cardNumber = '';
           //  errores
           console.error(error);
         });
