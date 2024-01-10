@@ -1,26 +1,26 @@
 <template>
-    <div>
-      <h2>Tokenizar</h2>
-      <form @submit.prevent="tokenizar">
-        <label>Propietario</label>
-        <input v-model="username" type="text" required>
-
-        <label>Número de Tarjeta:</label>
-        <input v-model="cardNumber" type="text" required>
-        
-        <label>Fecha de Expiración (MM/YYYY):</label>
-        <input v-model="expirationDate" type="text" required>
-        
-        <label>CVV:</label>
-        <input v-model="cvv" type="number" required>
-  
-        <label>Email:</label>
-        <input v-model="email" type="email" required>
-  
-        <button type="submit">Tokenizar Tarjeta</button>
-      </form>
-    </div>
-  </template>
+  <div class="card-form">
+     <h2 class="text-2xl font-bold mb-5">Tokenizar</h2>
+     <form @submit.prevent="tokenizar" class="space-y-5">
+       <label class="block">Propietario</label>
+       <input v-model="username" type="text" required class="w-full p-2 border border-gray-300 rounded">
+ 
+       <label class="block">Número de Tarjeta:</label>
+       <input v-model="cardNumber" type="text" required class="w-full p-2 border border-gray-300 rounded">
+ 
+       <label class="block">Fecha de Expiración (MM/YYYY):</label>
+       <input v-model="expirationDate" type="text" required class="w-full p-2 border border-gray-300 rounded">
+ 
+       <label class="block">CVV:</label>
+       <input v-model="cvv" type="number" required class="w-full p-2 border border-gray-300 rounded">
+ 
+       <label class="block">Email:</label>
+       <input v-model="email" type="email" required class="w-full p-2 border border-gray-300 rounded">
+ 
+       <button type="submit" class="w-full py-2 bg-blue-600 text-white font-semibold rounded">Tokenizar Tarjeta</button>
+     </form>
+  </div>
+ </template>
   
   <script>
   export default {

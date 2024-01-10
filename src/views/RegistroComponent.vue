@@ -1,22 +1,21 @@
 <template>
-    <div>
-      <h2>Registro</h2>
-      <router-link to="/">Ingresar</router-link>
-      <!-- Formulario de registro -->
-      <form @submit.prevent="registro">
-        <label>Usuario:</label>
-        <input v-model="username" type="text" required>
-        
-        <label>Contraseña:</label>
-        <input v-model="password" type="password" required>
-  
-        <label>Email:</label>
-        <input v-model="email" type="email" required>
-  
-        <button type="submit">Registrarse</button>
-      </form>
-    </div>
-  </template>
+  <div class="card-form">
+     <h2 class="text-2xl font-bold mb-5">Registro</h2>
+     <router-link to="/" class="block mb-4">Ingresar</router-link>
+     <form @submit.prevent="registro" class="space-y-5">
+       <label class="block">Usuario</label>
+       <input v-model="username" type="text" required class="w-full p-2 border border-gray-300 rounded">
+ 
+       <label class="block">Contraseña</label>
+       <input v-model="password" type="password" required class="w-full p-2 border border-gray-300 rounded">
+ 
+       <label class="block">Email</label>
+       <input v-model="email" type="email" required class="w-full p-2 border border-gray-300 rounded">
+ 
+       <button type="submit" class="w-full py-2 bg-blue-600 text-white font-semibold rounded">Registrarse</button>
+     </form>
+  </div>
+ </template>
   
   <script>
   import axios from 'axios';
