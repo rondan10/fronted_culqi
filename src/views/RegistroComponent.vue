@@ -1,21 +1,24 @@
 <template>
-  <div class="card-form">
-     <h2 class="text-2xl font-bold mb-5">Registro</h2>
-     <router-link to="/" class="block mb-4">Ingresar</router-link>
-     <form @submit.prevent="registro" class="space-y-5">
-       <label class="block">Usuario</label>
-       <input v-model="username" type="text" required class="w-full p-2 border border-gray-300 rounded">
+  <div class="bg-black-1 min-h-screen flex items-center justify-center">
+     <div class="bg-white rounded-lg shadow-xl p-8">
+       <h2 class="text-3xl font-bold mb-8">Registro</h2>
+       <router-link to="/" class="block mb-4">Ingresar</router-link>
+       <form @submit.prevent="registro" class="space-y-6">
+         <label class="block text-lg">Usuario</label>
+         <input v-model="username" type="text" required class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600">
  
-       <label class="block">Contraseña</label>
-       <input v-model="password" type="password" required class="w-full p-2 border border-gray-300 rounded">
+         <label class="block text-lg">Contraseña</label>
+         <input v-model="password" type="password" required class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600">
  
-       <label class="block">Email</label>
-       <input v-model="email" type="email" required class="w-full p-2 border border-gray-300 rounded">
+         <label class="block text-lg">Email</label>
+         <input v-model="email" type="email" required class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600">
  
-       <button type="submit" class="w-full py-2 bg-blue-600 text-white font-semibold rounded">Registrarse</button>
-     </form>
+         <button type="submit" class="w-full py-3 bg-indigo-600 text-white font-semibold rounded-md">Registrarse</button>
+       </form>
+     </div>
   </div>
  </template>
+ 
   
   <script>
   import axios from 'axios';
@@ -37,8 +40,12 @@
           email: this.email
         })
         .then(response => {
+          alert("Usuario Registrado Correctamente");
           //  respuesta del servidor después del registro
           console.log(response.data);
+          this.username = '';
+          this.password = '';
+          this.email = '';
         })
         .catch(error => {
           //  errores
@@ -48,4 +55,10 @@
     }
   };
   </script>
-  
+
+<style scoped>
+@import '~tailwindcss/base';
+@import '~tailwindcss/components';
+@import '~tailwindcss/utilities';
+</style>
+

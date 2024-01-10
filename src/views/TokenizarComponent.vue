@@ -1,26 +1,26 @@
+
 <template>
-  <div class="card-form">
-     <h2 class="text-2xl font-bold mb-5">Tokenizar</h2>
-     <form @submit.prevent="tokenizar" class="space-y-5">
-       <label class="block">Propietario</label>
-       <input v-model="username" type="text" required class="w-full p-2 border border-gray-300 rounded">
- 
-       <label class="block">Número de Tarjeta:</label>
-       <input v-model="cardNumber" type="text" required class="w-full p-2 border border-gray-300 rounded">
- 
-       <label class="block">Fecha de Expiración (MM/YYYY):</label>
-       <input v-model="expirationDate" type="text" required class="w-full p-2 border border-gray-300 rounded">
- 
-       <label class="block">CVV:</label>
-       <input v-model="cvv" type="number" required class="w-full p-2 border border-gray-300 rounded">
- 
-       <label class="block">Email:</label>
-       <input v-model="email" type="email" required class="w-full p-2 border border-gray-300 rounded">
- 
-       <button type="submit" class="w-full py-2 bg-blue-600 text-white font-semibold rounded">Tokenizar Tarjeta</button>
-     </form>
+  <div class="bg-gray-200 shadow-lg rounded-lg">
+      <form @submit.prevent="tokenizar" class="space-y-5 p-5">
+        <label class="block">Nombre del titular</label>
+        <input v-model="username" type="text" required class="w-full p-2 border border-gray-300 rounded">
+  
+        <label class="block">Número de tarjeta</label>
+        <input v-model="cardNumber" type="text" required class="w-full p-2 border border-gray-300 rounded">
+  
+        <label class="block">Fecha de Expiración (MM/YYYY)</label>
+        <input v-model="expirationDate" type="text" required class="w-full p-2 border border-gray-300 rounded">
+  
+        <label class="block">CVV</label>
+        <input v-model="cvv" type="number" required class="w-full p-2 border border-gray-300 rounded">
+  
+        <label class="block">Email</label>
+        <input v-model="email" type="email" required class="w-full p-2 border border-gray-300 rounded">
+  
+        <button type="submit" class="w-full py-2 bg-blue-600 text-white font-semibold rounded">Tokenizar Tarjeta</button>
+      </form>
   </div>
- </template>
+  </template>
   
   <script>
   export default {
@@ -72,3 +72,8 @@
   };
   </script>
   
+<style>
+@import '~tailwindcss/base';
+@import '~tailwindcss/components';
+@import '~tailwindcss/utilities';
+</style>
