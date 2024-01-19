@@ -71,7 +71,7 @@
         //   },
         })
         .then(response => {
-          //  respuesta del servidor después de la tokenización
+          alert(`Tarjeta tokenizada exitosamente. Token: ${response.data.token}`);
           console.log('Token almacenado en LocalStorage:', localStorage.getItem('token_locals'));
           console.log(response.data);
 
