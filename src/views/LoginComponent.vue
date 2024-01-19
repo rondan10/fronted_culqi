@@ -50,7 +50,7 @@ export default {
         alert("Inicio de Sesion Existoso");
         console.log(response.data);
 
-        localStorage.setItem('token', response.data.token);
+        localStorage.setItem('token_locals', response.data.token_locals);
         this.$router.push({ name: 'perfil', params: { username: this.username } });
 
       })

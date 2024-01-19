@@ -3,11 +3,9 @@
       <h2>Bienvenido, {{ username }}!</h2>
   
       <!-- Componente Tokenizar -->
-      <h3>Tokenizar Tarjeta</h3>
       <Tokenizar @tokenizado="manejarTokenizado" />
   
       <!-- Componente VerDatos -->
-      <h3>Ver Datos de Tarjeta</h3>
       <VerDatos @datosTarjeta="manejarDatosTarjeta" />
     </div>
   </template>
@@ -34,7 +32,7 @@
       manejarTokenizado(token) {
         //  token recibido después de la tokenización
         console.log('Token recibido:', token);
-        localStorage.setItem('token', token);
+        //localStorage.setItem('token', token);
       },
       manejarDatosTarjeta(datos) {
         //  datos de la tarjeta recibidos

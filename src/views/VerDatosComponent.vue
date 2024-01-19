@@ -10,6 +10,16 @@
         <button type="submit">Ver Datos</button>
       </form>
       <h2>Token de la tarjeta es : {{ token }}</h2>
+
+      <div v-if="datosTarjeta">
+      <h3>Datos de la Tarjeta:</h3>
+      <ul>
+        <li>Identificador: {{ datosTarjeta.usuario}}</li>
+        <li>Número de Tarjeta: {{ datosTarjeta.tarjeta }}</li>
+        <li>Año Expiracion: {{ datosTarjeta.anioexp }}</li>
+      </ul>
+    </div>
+
     </div>
   </template>
   
@@ -17,7 +27,8 @@
   export default {
     data() {
       return {
-        token: ''
+        token: '',
+        datosTarjeta: null,
       };
     },
     methods: {
@@ -28,6 +39,7 @@
         )
         .then(response => {
           // Manejar la respuesta del servidor después de ver datos
+          this.datosTarjeta = response.data;
           console.log(response.data);
         })
         .catch(error => {
