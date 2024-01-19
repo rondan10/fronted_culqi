@@ -1,28 +1,4 @@
-<!-- 
-<template>
-  <div class="bg-gray-200 shadow-lg rounded-lg">
-      <form @submit.prevent="tokenizar" class="space-y-5 p-5">
-        <label class="block">Nombre del titular</label>
-        <input v-model="username" type="text" required class="w-full p-2 border border-gray-300 rounded">
-  
-        <label class="block">Número de tarjeta</label>
-        <input v-model="cardNumber" type="text" maxlength="16" required class="w-full p-2 border border-gray-300 rounded">
-  
-        <label class="block">Fecha de Expiración (MM/YYYY)</label>
-        <input v-model="expirationDate" type="text" maxlength="7" @input="formatExpirationDate" required class="w-full p-2 border border-gray-300 rounded">
-  
-        <label class="block">CVV</label>
-        <input v-model="cvv" type="number" oninput="this.value = this.value.slice(0, 3)" required class="w-full p-2 border border-gray-300 rounded">
-  
-        <label class="block">Email</label>
-        <input v-model="email" type="email" required class="w-full p-2 border border-gray-300 rounded">
-  
-        <button type="submit" class="w-full py-2 bg-blue-600 text-white font-semibold rounded">Tokenizar Tarjeta</button>
-      </form>
-  </div>
-  </template>
-   -->
-   <template>
+  <template>
     <div class="max-w-md mx-auto mt-10">
       <div class="bg-white shadow-md rounded-md p-6">
         <form @submit.prevent="tokenizar" class="space-y-5">
